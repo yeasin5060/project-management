@@ -25,7 +25,7 @@ const syncUserCreation = inngest.createFunction(
 
 // ✅ inngest function to the Delete user
 
-export const syncUserDeletion = inngest.createFunction(
+const syncUserDeletion = inngest.createFunction(
   {
     id: "delete-user-with-clerk",
     triggers: [{ event: "clerk/user.deleted" }],
@@ -42,7 +42,7 @@ export const syncUserDeletion = inngest.createFunction(
 
 // ✅ inngest function to the Update user
 
-export const syncUserUpdation = inngest.createFunction(
+const syncUserUpdation = inngest.createFunction(
   {
     id: "update-user-from-clerk",
     triggers: [{ event: "clerk/user.updated" }],
@@ -62,4 +62,4 @@ export const syncUserUpdation = inngest.createFunction(
 );
 
 // Create an empty array where we'll export future Inngest functions
-export const functions = [];
+export const functions = [syncUserCreation, syncUserDeletion, syncUserUpdation];
