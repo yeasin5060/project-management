@@ -63,7 +63,7 @@ const syncUserUpdation = inngest.createFunction(
 
 // inngest function to save workspace data to a database
 
-const syncWorkspaseCreation = inngest.createFunction(
+const syncWorkspaceCreation = inngest.createFunction(
    {
     id: "sync-workspace-from-clerk",
     triggers: [{ event: "clerk/organization.created" }],
@@ -93,7 +93,7 @@ const syncWorkspaseCreation = inngest.createFunction(
 
 
 //inngest function to update workspace data to a database
-const syncWorkspaseUpdation = inngest.createFunction(
+const syncWorkspaceUpdation = inngest.createFunction(
     {
       id : "update-workspace-from-clerk",
       triggers : [{event : "clerk/organization.updated"}]
@@ -113,7 +113,7 @@ const syncWorkspaseUpdation = inngest.createFunction(
 );
 
 //inngest function to delete workspace data to a database
-const syncWorkspaseDeletion = inngest.createFunction(
+const syncWorkspaceDeletion = inngest.createFunction(
   {
     id : "delete-workspace-from-clerk",
     triggers : [{event : "clerk/organization.deleted"}]
@@ -131,7 +131,7 @@ const syncWorkspaseDeletion = inngest.createFunction(
 
 //inngest function to save workspace member data to a database
 
-const syncWorkspaseMembarCreation = inngest.createFunction(
+const syncWorkspaceMembarCreation = inngest.createFunction(
   {
     id : "sync-workspace-member-from-clerk",
     triggers : [{event : "clerk/organization.deleted"}]
@@ -156,8 +156,8 @@ export const functions = [
   syncUserCreation, 
   syncUserDeletion, 
   syncUserUpdation,
-  syncWorkspaseCreation,
-  syncWorkspaseUpdation,
-  syncWorkspaseDeletion,
-  syncWorkspaseMembarCreation
+  syncWorkspaceCreation,
+  syncWorkspaceUpdation,
+  syncWorkspaceDeletion,
+  syncWorkspaceMembarCreation
 ];
